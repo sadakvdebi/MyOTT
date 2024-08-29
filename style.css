@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px; /* დამატებითი პადინგი მობილური მოწყობილობებისთვის */
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* მობილურისთვის გადატანა */
+}
+
+.logo img {
+    height: 50px;
+    cursor: pointer;
+    margin-bottom: 10px; /* უკეთესი მოწყობა მობილურისთვის */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* მობილურისთვის გადატანა */
+    justify-content: center; /* მობილურისთვის უკეთესი განლაგება */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.language-switch {
+    margin-top: 10px; /* მობილურისთვის უკეთესი განლაგება */
+}
+
+.language-switch button {
+    border: none;
+    background-color: #e8f5e9;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.language-switch button:hover {
+    background-color: #d0e4d6;
+}
+
+.page-section {
+    display: none;
+    padding: 80px 0;
+    background-color: #f1f8e9;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* მობილურისთვის უკეთესი დაშორება */
+}
+
+/* მობილურისთვის განკუთვნილი სტილები */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column; /* ფლექსის სვეტებად გადატანა */
+        align-items: center; /* ცენტრში განთავსება */
+    }
+
+    .feature {
+        width: 80%; /* მობილურისთვის მთლიანი სიგანე */
+    }
+
+    .container {
+        width: 100%; /* სრული სიგანე მობილურისთვის */
+        padding: 0 10px;
+    }
+
+    .btn {
+        margin-top: 20px; /* მობილურისთვის დამატებითი დაშორება */
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* მობილურისთვის სრული სიგანე */
+    max-width: 300px; /* მაქსიმალური სიგანე */
+    text-align: left;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* ვიზუალური გამართვა */
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.modal-content p a {
+    color: #4CAF50;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.modal-content p a:hover {
+    text-decoration: underline;
+}

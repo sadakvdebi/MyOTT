@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTT Player</title>
+    <!-- ლოგო და ფავიკონი -->
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo" onclick="showSection('home')">
+                <img src="logo.png" alt="OTT Player Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">მთავარი</a></li>
+                    <li><a href="#" onclick="showSection('registration')">რეგისტრაცია</a></li>
+                    <!-- ფლეილისტის გვერდი მხოლოდ ავტორიზაციის შემდეგ გამოჩნდება -->
+                    <li><a href="#" class="cabinet-btn" onclick="handleCabinetButtonClick()">კაბინეტი</a></li>
+                </ul>
+            </nav>
+            <div class="language-switch">
+                <button>KA</button>
+                <button>RU</button>
+                <button>EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- მთავარი გვერდი -->
+    <section id="home" class="page-section">
+        <div class="container">
+            <h1>მოგესალმებით OTT Player-ზე</h1>
+            <p>OTT Player არის ინოვაციური აპლიკაცია, რომელიც საშუალებას გაძლევთ მართოთ და უყუროთ თქვენს საყვარელ არხებსა და ფლეილისტებს. ჩვენ გთავაზობთ მოქნილ და მრავალფეროვან ფუნქციონალს, რომელიც საშუალებას გაძლევთ:</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>მარტივი მართვა და კონფიგურაცია</h3>
+                    <p>მარტივად დაამატეთ, წაშალეთ ან განაახლეთ ფლეილისტები ინტუიციური და მოსახერხებელი ინტერფეისის საშუალებით.</p>
+                </div>
+                <div class="feature">
+                    <h3>მრავალი პლატფორმის მხარდაჭერა</h3>
+                    <p>ჩვენი აპლიკაცია თავსებადია მრავალ პლატფორმასთან და მოწყობილობებთან, რათა შეძლოთ ყურება ნებისმიერი ადგილიდან.</p>
+                </div>
+                <div class="feature">
+                    <h3>უსაფრთხო და დაცული სისტემა</h3>
+                    <p>თქვენი პირადი მონაცემები და ფლეილისტები დაცულია თანამედროვე უსაფრთხოების სისტემებით.</p>
+                </div>
+                <div class="feature">
+                    <h3>მრავალენოვანი მხარდაჭერა</h3>
+                    <p>აპლიკაცია ხელმისაწვდომია ქართულ, რუსულ და ინგლისურ ენებზე, რაც უზრუნველყოფს მოქნილობას და გამოყენების მარტივობას.</p>
+                </div>
+            </div>
+            <a href="#" class="btn" onclick="showSection('registration')">დარეგისტრირდით ახლა და სცადეთ უფასოდ</a>
+        </div>
+    </section>
+
+    <!-- რეგისტრაციის გვერდი -->
+    <section id="registration" class="page-section" style="display: none;">
+        <div class="container">
+            <h2>რეგისტრაცია</h2>
+            <form id="registrationForm">
+                <div class="input-group">
+                    <label for="email">ელ.ფოსტა:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">პაროლი:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">გაიმეორეთ პაროლი:</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <button type="submit" class="btn">რეგისტრაცია</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ფლეილისტების გვერდი -->
+    <section id="playlist" class="page-section" style="display: none;">
+        <div class="container">
+            <h2>თქვენი ფლეილისტები</h2>
+            <p>ჯერ არ გაქვთ დამატებული ფლეილისტი.</p>
+            <!-- ფლეილისტების მართვის ფორმა -->
+            <form id="playlistForm">
+                <div class="input-group">
+                    <label for="playlist-name">ფლეილისტის სახელი:</label>
+                    <input type="text" id="playlist-name" required>
+                </div>
+                <div class="input-group">
+                    <label>ფლეილისტის წყარო:</label>
+                    <input type="radio" id="source-file" name="source" value="file" checked>
+                    <label for="source-file">ფაილი</label>
+                    <input type="radio" id="source-link" name="source" value="link">
+                    <label for="source-link">ბმული</label>
+                </div>
+                <div class="input-group" id="file-input-group">
+                    <label for="playlist-file">აირჩიეთ ფაილი:</label>
+                    <input type="file" id="playlist-file">
+                </div>
+                <div class="input-group" id="link-input-group" style="display: none;">
+                    <label for="playlist-link">ჩაწერეთ ბმული:</label>
+                    <input type="url" id="playlist-link">
+                </div>
+                <button type="submit" class="btn">დამატება</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- კაბინეტის გვერდი -->
+    <section id="cabinet" class="page-section" style="display: none;">
+        <div class="container">
+            <h2>პირადი კაბინეტი</h2>
+            <p>თქვენი ანგარიშის მართვა და პაროლის შეცვლა.</p>
+            <!-- კაბინეტის შიგთავსი -->
+        </div>
+    </section>
+
+    <!-- ავტორიზაციის ფორმის მოდალი -->
+    <div id="loginForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginForm()">&times;</span>
+            <h2>ავტორიზაცია</h2>
+            <form id="loginFormContent">
+                <div class="input-group">
+                    <label for="login-email">ელ.ფოსტა:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">პაროლი:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">შესვლა</button>
+                <p><a href="#" onclick="showSection('registration'); closeLoginForm();">რეგისტრაცია</a></p>
+                <p><a href="#" onclick="showSection('password-reset'); closeLoginForm();">პაროლის აღდგენა</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- პაროლის აღდგენის გვერდი -->
+    <section id="password-reset" class="page-section" style="display: none;">
+        <div class="container">
+            <h2>პაროლის აღდგენა</h2>
+            <form id="passwordResetForm">
+                <div class="input-group">
+                    <label for="reset-email">შეიყვანეთ თქვენი ელ.ფოსტა:</label>
+                    <input type="email" id="reset-email" required>
+                </div>
+                <button type="submit" class="btn">გაგზავნა</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="common.js"></script>
+</body>
+</html>
